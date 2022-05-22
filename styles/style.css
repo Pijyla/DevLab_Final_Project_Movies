@@ -154,23 +154,23 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 35%;
   padding: 1rem;
   transform: translate(50%, -50%);
   color: red;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
 
 .prev {
-    left: 0%;
+    left: -0.3%;
     border-radius: 3px 0 0 3px;
   }
 
 .next {
-  right: 8%;
+  right: 27%;
   border-radius: 3px 0 0 3px;
 }
 
@@ -187,7 +187,7 @@ img {
     display: grid; 
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 20px;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -215,20 +215,20 @@ box-shadow: var(--shadow);
     display: grid;
     list-style: none;
     grid-template-columns: repeat(4, 1fr);
+    padding: 0;
 }
 
 .footer-nav a {
     display: block;
     text-decoration: none;
     text-align: center;
-    font-size: 1.1rem;
     color: #333;
     font-size: 1rem;
 }
 
-/************************************************************************************************************************ M E D I A  700px */
+/************************************************************************************************************************** M E D I A  600px */
 
-/* Stack the layout on small devices/viewports. */
+/* Stack the layout on small devices/viewports - Mobile phones. */
 @media all and (max-width: 600px) {
 body { 
     grid-template-areas: 
@@ -268,6 +268,20 @@ body {
     height: 100%;
     display: none;
     }
+.prev,
+.next {
+    top: 50%;
+    transform: translate(50%, -50%);
+    font-size: 1.5rem;
+    }
+.prev {
+    left: -5%;
+    border-radius: 3px 0 0 3px;
+    }
+.next {
+    right: 5%;
+    border-radius: 3px 0 0 3px;
+    }
 .top-rated {
     grid-template-columns: 1fr;
     }
@@ -277,8 +291,79 @@ body {
     width: 100%;
     }
 .footer-nav ul {
-    grid-template-columns: 1fr;
-    display: flex;
-    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
     }
 }
+
+/************************************************************************************************************************** M E D I A  768px */
+
+/* Stack the layout on medium devices/viewports - Tablets. */
+@media all and (min-width: 600px) and (max-width: 768px) {
+    body { 
+        grid-template-areas: 
+        "header header"
+        "slider slider"
+        "top-rated top-rated"
+        "best best"
+        "footer footer";
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;  
+        grid-template-columns: 1fr 1fr;
+        }
+    .main-nav ul {
+        grid-template-columns: 1fr 1fr;
+        }
+    .slider {
+        grid-area: slider;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-areas: 
+        'slide1 slide2';
+        }
+    .slide1 {
+        grid-area: slide1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        }
+    .slide2 {
+        grid-area: slide2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        }
+    .slide3 {
+        grid-area: slide3;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    .prev,
+    .next {
+        top: 22rem;
+        transform: translate(50%, -50%);
+        font-size: 1.5rem;
+        }
+    .prev {
+        left: 0rem;
+        border-radius: 3px 0 0 3px;
+        }
+    .next {
+        right: 2.5rem;
+        border-radius: 3px 0 0 3px;
+        }
+    .top-rated {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    .best { 
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        }
+    .footer-nav ul {
+        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        padding: 0;
+        }
+    }
+
