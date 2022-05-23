@@ -39,7 +39,7 @@ img {
 
 /***************************************************************************************************************************** H E A D E R */
 
-.header {
+#header {
     grid-area: header;
     grid-gap: 20px;
 }
@@ -79,7 +79,7 @@ img {
 
 /***************************************************************************************************************************** S L I D E R */
 
-.slider {
+#slider {
     grid-area: slider;
     display: grid;
     grid-gap: 20px;
@@ -150,8 +150,8 @@ img {
 }
 
 
-.prev,
-.next {
+#prev,
+#next {
   cursor: pointer;
   position: absolute;
   top: 35%;
@@ -164,25 +164,25 @@ img {
   border-radius: 0 3px 3px 0;
 }
 
-.prev {
+#prev {
     left: -0.3%;
     border-radius: 3px 0 0 3px;
   }
 
-.next {
+#next {
   right: 27%;
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover,
-.next:hover {
+#prev:hover,
+#next:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: var(--light);
 }
 
 /********************************************************************************************************************************* B E S T */
 
-.best { 
+#best { 
     grid-area: best;
     display: grid; 
     grid-template-rows: repeat(3, 1fr);
@@ -196,7 +196,7 @@ img {
 
 /*********************************************************************************************************************** T O P   R A T E D */
 
-.top-rated { 
+#top-rated { 
     grid-area: top-rated; 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -205,7 +205,7 @@ img {
 
 /***************************************************************************************************************************** F O O T E R */
 
-.footer {
+#footer {
 grid-area: footer;
 background: var(--primary);
 box-shadow: var(--shadow);
@@ -226,7 +226,7 @@ box-shadow: var(--shadow);
     font-size: 1rem;
 }
 
-/************************************************************************************************************************** M E D I A  600px */
+/************************************************************************************************************************ M E D I A  600px */
 
 /* Stack the layout on small devices/viewports - Mobile phones. */
 @media all and (max-width: 600px) {
@@ -243,7 +243,7 @@ body {
 .main-nav ul {
     grid-template-columns: 1fr;
     }
-.slider { 
+#slider { 
     grid-area: slider;
     display: block;
     position: relative;
@@ -268,24 +268,24 @@ body {
     height: 100%;
     display: none;
     }
-.prev,
-.next {
+#prev,
+#next {
     top: 50%;
     transform: translate(50%, -50%);
     font-size: 1.5rem;
     }
-.prev {
+#prev {
     left: -5%;
     border-radius: 3px 0 0 3px;
     }
-.next {
+#next {
     right: 5%;
     border-radius: 3px 0 0 3px;
     }
-.top-rated {
+#top-rated {
     grid-template-columns: 1fr;
     }
-.best { 
+#best { 
     grid-template-rows: 1fr;
     grid-gap: 20px;
     width: 100%;
@@ -296,7 +296,7 @@ body {
     }
 }
 
-/************************************************************************************************************************** M E D I A  768px */
+/************************************************************************************************************************ M E D I A  768px */
 
 /* Stack the layout on medium devices/viewports - Tablets. */
 @media all and (min-width: 600px) and (max-width: 768px) {
@@ -313,7 +313,7 @@ body {
     .main-nav ul {
         grid-template-columns: 1fr 1fr;
         }
-    .slider {
+    #slider {
         grid-area: slider;
         display: grid;
         grid-gap: 20px;
@@ -338,24 +338,24 @@ body {
         height: 100%;
         display: none;
     }
-    .prev,
-    .next {
+    #prev,
+    #next {
         top: 22rem;
         transform: translate(50%, -50%);
         font-size: 1.5rem;
         }
-    .prev {
+    #prev {
         left: 0rem;
         border-radius: 3px 0 0 3px;
         }
-    .next {
+    #next {
         right: 2.5rem;
         border-radius: 3px 0 0 3px;
         }
-    .top-rated {
+    #top-rated {
         grid-template-columns: repeat(2, 1fr);
         }
-    .best { 
+    #best { 
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;

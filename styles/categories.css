@@ -1,0 +1,193 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
+}
+
+/********************************************************************************************************************************* H T M L */
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+
+/********************************************************************************************************************************* B O D Y */
+
+body { 
+  padding: 0rem 1rem;
+  background: #ccc;
+  margin: 0;
+  line-height: 1.4;
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "search search"
+    "filters filters"
+    "title title"
+    "main main"
+    "footer footer";
+  grid-template-rows: repeat(6, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+  height: 100vh;
+  }
+
+img {
+  width: 100%;
+}
+
+/***************************************************************************************************************************** H E A D E R */
+
+#header {
+  grid-area: header;
+  grid-gap: 20px;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+
+.btn {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+/***************************************************************************************************************************** S E A R C H */
+
+#search { 
+  background: red;
+  grid-area: search;
+  padding: 0.8rem 0;      
+  }
+
+/*************************************************************************************************************************** F I L T E R S */
+
+#filters { 
+  background: orange;
+  grid-area: filters; 
+  padding: 2.5rem 0;
+  }
+
+/*************************************************************************************************************************** F I L T E R S */
+
+#title { 
+  grid-area: title; 
+  text-align: center;
+  align-self:center;
+  color: black;
+  }
+
+/********************************************************************************************************************************* M A I N */
+
+#main { 
+  grid-area: main;
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-gap: 20px;
+}
+
+/***************************************************************************************************************************** F O O T E R */
+
+#footer {
+  grid-area: footer;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  }
+  
+.footer-nav ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+}
+
+.footer-nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+}
+
+/************************************************************************************************************************ M E D I A  600px */
+
+/* Stack the layout on small devices/viewports - Mobile phones. */
+@media all and (max-width: 600px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "search"
+      "filters"
+      "title"
+      "main"
+      "footer";
+    grid-template-rows: repeat(6, 1fr);  
+    grid-template-columns: 1fr;
+ }
+.main-nav ul {
+  grid-template-columns: 1fr;
+  }
+#main { 
+  grid-template-columns: 1fr;
+  }
+.footer-nav ul {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  }
+}
+
+/************************************************************************************************************************ M E D I A  768px */
+
+/* Stack the layout on medium devices/viewports - Tablets. */
+@media all and (min-width: 600px) and (max-width: 768px) {
+  body { 
+      grid-template-areas: 
+      "header header"
+      "search search"
+      "filters filters"
+      "title title"
+      "main main"
+      "footer footer";
+      grid-template-rows: repeat(6, 1fr);   
+      grid-template-columns: 1fr 1fr;
+      }
+  .main-nav ul {
+      grid-template-columns: 1fr 1fr;
+      }
+  #main { 
+    grid-template-columns: repeat(2, 1fr);
+    }
+  .footer-nav ul {
+      grid-template-columns: repeat(4, 1fr);
+      display: grid;
+      padding: 0;
+      }
+  }
