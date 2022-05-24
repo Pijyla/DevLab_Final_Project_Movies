@@ -29,8 +29,8 @@ body {
       "slider best"
       "top-rated best"
       "footer footer";
-    grid-template-rows: 80px 0.5fr 0.9fr 50px;  
-    grid-template-columns: 75% 1fr;
+    grid-template-rows: repeat(4, 1fr);  
+    grid-template-columns: 3fr 1fr;
     grid-row-gap: 5rem;
     grid-column-gap: 2rem;
     height: 100vh;
@@ -173,7 +173,7 @@ img {
   }
 
 #next {
-  right: 27%;
+  right: 29%;
   border-radius: 3px 0 0 3px;
 }
 
@@ -188,13 +188,84 @@ img {
 #best { 
     grid-area: best;
     display: grid; 
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 20px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
     height: 100%;
-    text-align: center;
+    width: 100%;
+}
+
+.best-movie {
+    box-shadow: var(--shadow);
+    background-color: var(--secondary);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+}
+
+.best-movie img {
+    width: 100%;
+}
+
+.best-movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0.5rem;
+    letter-spacing: 0.8px;
+    margin-top: 1rem;
+}
+
+.best-movie-info h3 {
+    font-size: 0.8rem;
+}
+
+.best-movie-info span {
+    background-color: var(--primary);
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.best-movie-info span.green {
+    background: green;
+    color: black;
+}
+
+.best-movie-info span.orange {
+    background-color: orange;
+    color: black;
+}
+
+.best-movie-info span.red {
+    background-color: red;
+    color: black;
+}
+
+.about-best-movie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    overflow-x: hidden;
+    color: var(--dark);
+}
+
+.about-best-movie h3 {
+    color: var(--secondary);
+}
+
+.movie:hover .about-best-movie {
+    transform:translateY(0);
 }
 
 /*********************************************************************************************************************** T O P   R A T E D */
@@ -214,7 +285,7 @@ img {
 }
 
 .movie img {
-    width: 100%;
+    width: 100%; 
 }
 
 .movie-info {
@@ -223,6 +294,7 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
 }
 
 .movie-info h3 {
@@ -238,18 +310,21 @@ img {
 }
 
 .movie-info span.green {
-    color: green;
+    background: green;
+    color: black;
 }
 
 .movie-info span.orange {
-    color: orange;
+    background-color: orange;
+    color: black;
 }
 
 .movie-info span.red {
-    color: red;
+    background-color: red;
+    color: black;
 }
 
-.description {
+.about-movie {
     position: absolute;
     left: 0;
     right: 0;
@@ -257,10 +332,17 @@ img {
     background-color: var(--primary);
     padding: 1rem;
     max-height: 100%;
-    transform: translateY(-101%);
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    overflow-x: hidden;
+    color: var(--dark);
 }
 
-.movie:hover .description {
+.about-movie h3 {
+    color: var(--secondary);
+}
+
+.movie:hover .about-movie {
     transform:translateY(0);
 }
 
@@ -348,6 +430,7 @@ body {
     }
 #best { 
     grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 20px;
     width: 100%;
     }
