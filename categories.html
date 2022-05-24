@@ -5,124 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/categories.css">
-    <title>Categories</title>
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
 <!-------------------------------------------------------------------------------------------------- H E A D E R  /  N A V I G A T I O N  -->
-<header id="header">
-    <!-- N A V I G A T I O N -->
-    <nav class="main-nav">
-        <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">Category</a> </li>
-            <li> <a href="#">Reccomendations</a> </li>
-            <li> <a href="#">About us</a> </li>
-        </ul>
-    </nav>
-</header>
+    
+        <!-- N A V I G A T I O N -->
+        <nav class="navbar">
+            <div class="content">
+              <div class="logo">
+                <a href="#">NDF Movies</a>
+              </div>
+              <ul class="menu-list">
+                <div class="icon cancel-btn">
+                  <i class="fas fa-times"></i>
+                </div>
+                <li> <a href="#">Home</a> </li>
+                <li> <a href="#">Movies</a> </li>
+                <li> <a href="#">Reccomendations</a> </li>
+                <li> <a href="#">About us</a> </li>
+              </ul>
+              <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+    
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
-<!--------------------------------------------------------------------------------------------------------------------------- S E A R C H -->
-    <section id="search">Search</section>
+<!--------------------------------------------------------------------------------------------------------------------------- S L I D E R -->
+    <section id="slider">
+        <div class="search__container">
+            <input class="search__input" type="text" placeholder="Search">
+        </div>
+    </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+<section id="filters">
 
-<!------------------------------------------------------------------------------------------------------------------------- F I L T E R S -->
-    <section id="filters">Filters</section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
-<!------------------------------------------------------------------------------------------------------------------------- F I L T E R S -->
-    <section id="title"><h1>You searched for this</h1></section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+    <button class="btn-86">
+        <div class="fallback">Name</div>
+        <div class="letters" aria-hidden>
+          <span>N</span>
+          <span>A</span>
+          <span>M</span>
+          <span>E</span>
+        </div>
+      </button>
+      <button class="btn-86">
+        <div class="fallback">Name</div>
+        <div class="letters" aria-hidden>
+          <span>N</span>
+          <span>A</span>
+          <span>M</span>
+          <span>E</span>
+        </div>
+      </button>
+      <button class="btn-86">
+        <div class="fallback">Name</div>
+        <div class="letters" aria-hidden>
+          <span>N</span>
+          <span>A</span>
+          <span>M</span>
+          <span>E</span>
+        </div>
+      </button>
 
-<!------------------------------------------------------------------------------------------------------------------------------- M A I N -->
-    <section id="main">
+</section>    
+
+<!--------------------------------------------------------------------------------------------------------------------- T O P   R A T E D -->
+    <section id="top-rated">
         
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
-        <div>
+        <div class="movie">
             <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
             </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
+            <div class="decription">
+                <h3>About movie</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
+                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
+                eaque similique. Ad, necessitatibus?
             </div>
         </div>
 
     </section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->  
-
-<!---------------------------------------------------------------------------------------------------------------------------- F O O T E R-->
-<footer id="footer">
-    <!-- N A V I G A T I O N -->
-    <nav class="footer-nav">
-        <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">Movies</a> </li>
-            <li> <a href="#">Reccomendations</a> </li>
-            <li> <a href="#">About us</a> </li>
-        </ul>
-    </nav>
-</footer>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+    
+<!---------------------------------------------------------------------------------------------------------------------------- F O O T E R-->
+    <footer id="footer">
+        <!-- N A V I G A T I O N -->
+        <nav class="footer-nav">
+            <ul>
+                <li> <a href="#">Home</a> </li>
+                <li> <a href="#">Movies</a> </li>
+                <li> <a href="#">Reccomendations</a> </li>
+                <li> <a href="#">About us</a> </li>
+            </ul>
+        </nav>
+    </footer>
+<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+<script src="./js/index.js"></script>
 </body>
 </html>
