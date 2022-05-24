@@ -38,11 +38,14 @@ function titleSelected(id){
     fetch(`${BASE_URL}/movie/${id}?${API_KEY}`)
     .then(data=>data.json()).then(data=>
         {console.log(data);
+        let genres =  data.genres.map(item=>item.name);
+        if(genres.length == 0){genres = "unknown"}
+        else{genres = genres.join(", ")}
         searchedMovie.innerHTML = `
          <img src="${IMAGE_PATH}${data.poster_path||data.backdrop_path}">
          <div>
             <p>Adult: ${data.adult} Budget: ${data.budget}</p>
-            <p>Genres: ${String(data.genres.name)}</p>
+            <p>Genres: ${genres}</p>
             <p>${data.title} <span>${data.vote_average}</span></p>
             <p>${data.overview}</p>
             <p>${data.release_date}</p>
