@@ -33,105 +33,204 @@ window.addEventListener("scroll", function () {
 
 });
 
-// Kviz
 
-const quizData = [{
-  question: "Omiljeni zanr?",
-  a: "Horor",
-  b: "Akcija",
-  c: "Drama",
-  d: "Triler",
-}, {
-  question: "Omiljena era?",
-  a: "Prije 2000",
-  b: "2000-2010",
-  c: "2010-2020",
-  d: "Posle 2020",
-}, {
-  question: "Omiljena duzina filma?",
-  a: "Kratki filmovi (ispod 60 min)",
-  b: "Uobicajeni filmovi (60 do 90 min)",
-  c: "Malo duzi filmovi (90 do 120 min)",
-  d: "Dugometrazni filmovi (preko 120 min)",
-}, {
-  question: "Rejting filmova?",
-  a: "1-3",
-  b: "3-5",
-  c: "5-7",
-  d: "7-10",
-}
-];
+// Api
 
-const quiz = document.getElementById('quiz');
-const answerEls = document.querySelectorAll('.answer');
-const questionEl = document.getElementById('question');
-const a_text = document.getElementById('a_text');
-const b_text = document.getElementById('b_text');
-const c_text = document.getElementById('c_text');
-const d_text = document.getElementById('d_text');
-const submitBtn = document.getElementById('submit');
+//TMDB API for movies
 
-let currentQuiz = 0;
-let score = 0;
+const API_KEY = 'api_key=08beb287a4aac1ea2289c2ee16e39d87';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const API_MOST_POPULAR_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const API_BEST_MOVIES_URL = BASE_URL + '/discover/movie?sort_by=vote_average.desc&vote_count.gte=10&' + API_KEY;
+const API_BEST_SERIES_URL = BASE_URL + '/discover/tv?sort_by=vote_average.desc&vote_count.gte=10&' + API_KEY;
 
-loadQuiz();
+const topRated = document.getElementById('top-rated')
+const best = document.getElementById('best')
 
-function loadQuiz(){
-deselectAnswer();
+getMovies(API_URL);
 
-const currentQuizData = quizData[currentQuiz];
-
-questionEl.innerText = currentQuizData.question;
-a_text.innerText = currentQuizData.a;
-b_text.innerText = currentQuizData.b;
-c_text.innerText = currentQuizData.c;
-d_text.innerText = currentQuizData.d;
+function getMovies(url) {
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data.results);
+        showMovies(data.results);
+    })
 }
 
-function deselectAnswer() {
-answerEls.forEach(answerEl => answerEl.checked = false);
+function showMovies(data){
+    topRated.innerHTML = '';
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview, release_date} = movie;
+        const li = document.createElement('li');
+        li.innerHTML = `
+        
+<div class="movie-card">
+
+  <a href="./movie-details.html">
+    <figure class="card-banner">
+      <img src="${IMG_URL+poster_path}" alt="${title}">
+    </figure>
+  </a>
+
+  <div class="title-wrapper">
+    <a href="./movie-details.html">
+      <h3 class="card-title">${title}</h3>
+    </a>
+
+    <time datetime="2022">${release_date}</time>
+  </div>
+
+  <div class="card-meta">
+    <div class="badge badge-outline">HD</div>
+
+    <div class="duration">
+      <ion-icon name="time-outline"></ion-icon>
+
+      <time datetime="PT137M">137 min</time>
+    </div>
+
+    <div class="rating">
+      <ion-icon name="star"></ion-icon>
+
+      <data>${vote_average}</data>
+    </div>
+  </div>
+
+</div>
+
+        `
+        topRated.appendChild(li);
+    })
 }
 
-function getSelected() {
-let answer;
-
-answerEls.forEach(answerEl => {
-  if(answerEl.checked) {
-     answer = answerEl.id;
-  }
-});
-
-return answer;
+function getColor(vote){
+    if(vote>=8){
+        return 'green'
+    }else if(vote>=5){
+        return 'orange'
+    }else{
+        return 'red'
+    }
 }
 
-submitBtn.addEventListener('click', () => {
-const answer = getSelected();
+getBestMovies(API_BEST_MOVIES_URL);
 
-if(answer) {
-
-  if (answer === "a") {
-    console.log("a");
-  } else if (answer === "b") {
-    console.log("b");
-  } else if (answer === "c") {
-    console.log("c");
-  } else if (answer === "d") {
-    console.log("d");
-  } 
-  
-
-  currentQuiz++;
-
-  if(currentQuiz < quizData.length){
-      loadQuiz();
-  } else { 
-      quiz.innerHTML = `
-      <h2>Sad na kraju dodat izbacene filmove</h2>
-
-      <button onclick="location.reload()">
-      Reload
-      </button>
-      `
-  }
+function getBestMovies(url) {
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data.results);
+        bestMovies(data.results);
+    })
 }
-})
+
+function bestMovies(data){
+  list = document.querySelector("#bestList");
+  console.log(list);
+    list.innerHTML = '';
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview, release_date} = movie;
+        const li = document.createElement('li');
+        li.innerHTML = `
+        
+<div class="movie-card">
+
+  <a href="./movie-details.html">
+    <figure class="card-banner">
+      <img src="${IMG_URL+poster_path}" alt="${title}">
+    </figure>
+  </a>
+
+  <div class="title-wrapper">
+    <a href="./movie-details.html">
+      <h3 class="card-title">${title}</h3>
+    </a>
+
+    <time datetime="2022">${release_date}</time>
+  </div>
+
+  <div class="card-meta">
+    <div class="badge badge-outline">HD</div>
+
+    <div class="duration">
+      <ion-icon name="time-outline"></ion-icon>
+
+      <time datetime="PT137M">137 min</time>
+    </div>
+
+    <div class="rating">
+      <ion-icon name="star"></ion-icon>
+
+      <data>${vote_average}</data>
+    </div>
+  </div>
+
+</div>
+
+        `
+        list.appendChild(li);
+    })
+}
+
+
+// SERIJE
+
+
+getBestShows(API_BEST_SERIES_URL);
+
+function getBestShows(url) {
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data.results);
+        bestShows(data.results);
+    })
+}
+
+function bestShows(data){
+  list = document.querySelector("#bestListSeries");
+  console.log(list);
+    list.innerHTML = '';
+    data.forEach(movie => {
+        const {name, poster_path, vote_average, overview, first_air_date} = movie;
+        const li = document.createElement('li');
+        li.innerHTML = `
+        
+<div class="movie-card">
+
+  <a href="./movie-details.html">
+    <figure class="card-banner">
+      <img src="${IMG_URL+poster_path}" alt="${name}">
+    </figure>
+  </a>
+
+  <div class="title-wrapper">
+    <a href="./movie-details.html">
+      <h3 class="card-title">${name}</h3>
+    </a>
+
+    <time datetime="2022">${first_air_date}</time>
+  </div>
+
+  <div class="card-meta">
+    <div class="badge badge-outline">HD</div>
+
+    <div class="duration">
+      <ion-icon name="time-outline"></ion-icon>
+
+      <time datetime="PT137M">137 min</time>
+    </div>
+
+    <div class="rating">
+      <ion-icon name="star"></ion-icon>
+
+      <data>${vote_average}</data>
+    </div>
+  </div>
+
+</div>
+
+        `
+        list.appendChild(li);
+    })
+}
+
+
+
