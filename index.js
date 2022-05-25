@@ -10,16 +10,16 @@ const API_BEST_MOVIES_URL = BASE_URL + '/discover/movie?sort_by=vote_average.des
 const topRated = document.getElementById('top-rated')
 const best = document.getElementById('best')
 
-getMovies(API_URL);
+getTopRatedMovies(API_URL);
 
-function getMovies(url) {
+function getTopRatedMovies(url) {
     fetch(url).then(res => res.json()).then(data => {
         console.log(data.results);
-        showMovies(data.results);
+        TopRatedMovies(data.results);
     })
 }
 
-function showMovies(data){
+function TopRatedMovies(data){
     topRated.innerHTML = '';
     data.forEach(movie => {
         const {title, poster_path, vote_average, overview} = movie;

@@ -11,111 +11,53 @@
 <!-------------------------------------------------------------------------------------------------- H E A D E R  /  N A V I G A T I O N  -->
 <header id="header">
     <!-- N A V I G A T I O N -->
-    <nav class="main-nav">
-        <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">Category</a> </li>
-            <li> <a href="#">Reccomendations</a> </li>
-            <li> <a href="#">About us</a> </li>
-        </ul>
+    <nav class="navbar">
+        <a href="#" class="logo">LOGO</a>
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><img class="menu-image" src="./movies/menu_icon.png"></label>
+        <div class="menu">
+            <ul class="list">
+                <li> <a href="#">Home</a> </li>
+                <li> <a href="#">Category</a> </li>
+                <li> <a href="#">Reccomendations</a> </li>
+                <li> <a href="#">About us</a> </li>
+            </ul>
+        </div>
     </nav>
 </header>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!--------------------------------------------------------------------------------------------------------------------------- S E A R C H -->
     <section id="search">
-        <div><input class="search" type="text"> Search</div>
+        <div class="search-box">
+            <input class="search-text" type="text" placeholder="Search here...">
+            <a href="##" class="icon">
+                <img src="./movies/clipart85921.png" alt="Search icon">
+            </a>
+        </div>
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!------------------------------------------------------------------------------------------------------------------------- F I L T E R S -->
     <section id="filters">
-        <div class="flex">
-            <div>Name</div>
-            <div>Popular</div>
-            <div>Newest</div>
-        </div>
+        <div class="filter">Name</div>
+        <div class="filter">Popular</div>
+        <div class="filter">Newest</div>
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 <!----------------------------------------------------------------------------------------------------------------------------- T I T L E -->
-    <section id="title"><h1>You searched for this</h1></section>
+    <section id="title"><h1>You searched for this:</h1></section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+
+    <section id="tags">
+        <div class="tag">Action</div>
+        <div class="tag">Adventure</div>
+        <div class="tag">Drama</div>
+        <div class="tag">Comedy</div>
+    </section>
 
 <!------------------------------------------------------------------------------------------------------------------------------- M A I N -->
     <section id="main">
-        
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
-        <div>
-            <img src="./movies/img-2.jpeg">
-            <div>
-                <p>Once upon a time in Hollywood</p>
-                <p>Description</p>
-                <p>Date</p>
-            </div>
-        </div>
-
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->  
 
@@ -132,5 +74,6 @@
     </nav>
 </footer>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
+<script src="categories.js"></script>
 </body>
 </html>
