@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color:  #012d30;
+    background-color:  black
 }
 
 .movie_search{
@@ -10,16 +10,27 @@ body{
     padding: 2rem;
     justify-content: center;
     align-items: center;
-    background-color: #914944 ; 
+    background-color: black ; 
+    color: orange;
     border-radius: 1rem;  
     width: 80%;
     margin: auto; 
     margin-top: 2rem;
+    border: solid 10px #bbb;
 }
+.movie_search q{
+    color: #ffffff;
+}
+
+.movie_search h1{color: orange;
+margin: 0.7rem;}
 
 .invisible{
     display: none !important;
 }
+
+p>span{
+    color:white}
 
 #movie_search>div{
     display: flex;
@@ -88,9 +99,9 @@ body{
 
 #similar_movies{
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: 1rem;
 }
 
 .similar_div{

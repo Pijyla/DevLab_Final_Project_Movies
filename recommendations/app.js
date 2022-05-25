@@ -46,19 +46,19 @@ function titleSelected(id){
         let genres=[];
         data.genres.map(item=>genres.push(item.name));
         searchedMovie.innerHTML = `
-        <h2>${data.title}</h2>
-        ${data.tagline?'<q>'+data.tagline+'</q>':''}
+        <h1>${data.title}</h1>
+        ${data.tagline?'<q><em>'+data.tagline+'</em></q>':''}
         <div>
             <img src="${IMAGE_PATH}${data.poster_path||data.backdrop_path}">
             <div>
-                <p>Adult: ${data.adult}</p>
-                <p>Budget: ${data.budget} &#36;</p>
-                <p>Genres: ${genres.length>0?genres.join(", "):"unknown"}</p>
-                <p>Score: ${data.vote_average}</p>
-                <p>${data.release_date}</p>
+                <p>Adult: <span>${data.adult}</span></p>
+                <p>Budget: <span>${data.budget} &#36;</span></p>
+                <p>Genres: <span>${genres.length>0?genres.join(", "):"unknown"}</span></p>
+                <p>Score: <span>${data.vote_average}</span></p>
+                <p>Date: <span>${data.release_date}</span></p>
             </div>
         </div>
-        <p>Overview:<br> ${data.overview}</p>`});
+        <p>Overview:<br> <span>${data.overview}</span></p>`});
     similarMoviesFiller(id)
 
 }
