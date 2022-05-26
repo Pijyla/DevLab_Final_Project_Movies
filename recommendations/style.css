@@ -1,72 +1,179 @@
+body{
+    margin: 0;
+    background-color:  black
+}
 
-#movie_search{
+.movie_search{
     display: flex;
+    flex-direction: column;
     font-size: 1.8rem;
-    margin: 3rem;
     padding: 2rem;
     justify-content: center;
     align-items: center;
-    background-color: red;    
+    background-color: black ; 
+    color: orange;
+    border-radius: 1rem;  
+    width: 80%;
+    margin: auto; 
+    margin-top: 2rem;
+    border: solid 10px #bbb;
+}
+.movie_search q{
+    color: #ffffff;
 }
 
+.movie_search h1{color: orange;
+margin: 0.7rem;}
+
 .invisible{
-    display: none ;
+    display: none !important;
 }
-#movie_search>img{
+
+p>span{
+    color:white}
+
+#movie_search>div{
+    display: flex;
+}
+#movie_search>q{
+    margin-bottom:1.5rem;
+    font-size: 2rem;
+
+}
+#movie_search>div>img{
     height: 35rem;
     width: 30rem;
     margin-right: 2rem;
     border-radius: 5px;
 }
-#movie_search>div{
+#movie_search>div>div{
     display: flex;
     flex-direction: column;
 
 }
 
-#movie_search p span{float: right;}
+.message{
+    display: block;
+    margin: auto;
+    background-color: rgb(255, 105, 130);
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border-radius:2rem;
+    width: 58%;
+    text-align: center;
 
+}
 
 #form>input{
-    width: 100%;
+    width: 60%;
+    display: block;
+    margin: auto;
+    font-size: 1.4rem;    
 }
 
-#search_dropdown{
+.search_dropdown{
     display: flex;
+    justify-content: space-between;
+    gap: 0.1rem;
     flex-wrap: wrap;
+    background-color: #ddd;
+    margin: 0rem 2rem 1rem 2rem;
+    padding:1rem
 }
+
+.search_dropdown>div{
+    display: flex;
+    width: 33%;
+    font-size: 1.3rem;
+}
+
 #search_dropdown img{
-    height: 3rem;
-    width: 2rem;
+    height: 4rem;
+    width: 3rem;
 }
 #search_dropdown div{
-    width: 33%;
+    
+    flex-basis: 30%;
+    border:2px solid rgb(182, 154, 154);
 }
+
+#similar_movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.similar_div{
+    background-color: yellowgreen;
+    margin: 1rem
+
+}
+.similar_div img{
+    height: 5rem;
+    width: 4rem;
+}
+
+#similar_movies>div{
+    flex-basis: 30%;
+    flex-grow: 1;
+    border-radius: 0.5rem;
+}
+#similar_movies img{
+    width: 100%;
+    height: auto;
+}
+
 
 @media only screen and (max-width: 768px){
     #movie_search{
         font-size: 1.4rem;
     }
 
-    #movie_search>img{
+    #movie_search>div>img{
         height: 25rem;
         width: 20rem;
     }
 
+    #search_dropdown div{
+        flex-basis: 45%;
+    }
+
+    #similar_movies div{
+        flex-basis: 40%;
+        border-radius: 0.7rem;
+    }
+
+    #similar_movies img{
+        width: 100%;
+        height: auto;
+    }
+
 }
 
-#similar_movies{
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
+@media only screen and (max-width: 425px){
+    #movie_search{
+        font-size: 1.4rem;
+    }
 
-.similar_div{
-    background-color: yellowgreen;
-    width: 28%;
-    margin: 1rem
+    #movie_search>div>img{
+        height:auto;
+        width:100%;
+        align-self: center;
+    }
+
+    #search_dropdown div{
+        flex-basis: 100%;
+    }
+
+    #movie_search>div{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #similar_movies div{
+        flex-basis: 100%;
+        border-radius: 0.5rem;
+    }
 
 }
-.similar_div img{
-    height: 5rem;
-    width: 4rem;}

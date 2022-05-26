@@ -24,7 +24,12 @@ input.addEventListener("keyup",()=>{
     if(data.results.length == 0 ){
         messageDiv.classList.remove("invisible");
         searchDropdown.innerHTML = '';
+        searchDropdown.classList.add("invisible")
 
+    }
+    else{
+        messageDiv.classList.add("invisible");
+        searchDropdown.classList.remove("invisible")
     }
     })
 }) 
@@ -34,22 +39,26 @@ function titleSelected(id){
     messageDiv.classList.add("invisible");
     searchedMovie.classList.remove("invisible");
     input.value = '';
-    searchDropdown.innerHTML=''
+    searchDropdown.innerHTML='';
     fetch(`${BASE_URL}/movie/${id}?${API_KEY}`)
     .then(data=>data.json()).then(data=>
-        {console.log(data);
-        let genres =  data.genres.map(item=>item.name);
-        if(genres.length == 0){genres = "unknown"}
-        else{genres = genres.join(", ")}
+        {
+        let genres=[];
+        data.genres.map(item=>genres.push(item.name));
         searchedMovie.innerHTML = `
-         <img src="${IMAGE_PATH}${data.poster_path||data.backdrop_path}">
-         <div>
-            <p>Adult: ${data.adult} Budget: ${data.budget}</p>
-            <p>Genres: ${genres}</p>
-            <p>${data.title} <span>${data.vote_average}</span></p>
-            <p>${data.overview}</p>
-            <p>${data.release_date}</p>
-        </div>`});
+        <h1>${data.title}</h1>
+        ${data.tagline?'<q><em>'+data.tagline+'</em></q>':''}
+        <div>
+            <img src="${IMAGE_PATH}${data.poster_path||data.backdrop_path}">
+            <div>
+                <p>Adult: <span>${data.adult}</span></p>
+                <p>Budget: <span>${data.budget} &#36;</span></p>
+                <p>Genres: <span>${genres.length>0?genres.join(", "):"unknown"}</span></p>
+                <p>Score: <span>${data.vote_average}</span></p>
+                <p>Date: <span>${data.release_date}</span></p>
+            </div>
+        </div>
+        <p>Overview:<br> <span>${data.overview}</span></p>`});
     similarMoviesFiller(id)
 
 }
@@ -69,3 +78,12 @@ function similarMoviesFiller(movie_id){
 similarMovies.innerHTML=text
         })
 }
+
+input.addEventListener("focus",()=>{
+    if(input.value.trim().length != 0)
+    searchDropdown.classList.remove("invisible")
+})
+
+input.addEventListener("focusout",()=>{
+    setTimeout(()=>{searchDropdown.classList.add("invisible")},250)
+})
