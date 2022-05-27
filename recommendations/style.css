@@ -64,11 +64,19 @@ p>span{
 
 }
 
-#form>input{
+input{
     width: 60%;
     display: block;
     margin: auto;
-    font-size: 1.4rem;    
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0 3rem gold;
+    -moz-box-shadow: 0 0 3rem gold;
+    box-shadow: 0 0 3rem gold;   
+}
+
+input:focus{
+    font-size: 3rem;
 }
 
 .search_dropdown{
@@ -176,4 +184,11 @@ p>span{
         border-radius: 0.5rem;
     }
 
+}
+
+@media only screen and (min-width: 1400px){
+    #similar_movies div{
+        flex-basis: 20%;
+        border-radius: 0.5rem;
+    }
 }

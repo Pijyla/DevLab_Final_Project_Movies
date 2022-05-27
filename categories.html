@@ -17,10 +17,10 @@
         <label for="toggler"><img class="menu-image" src="./movies/menu_icon.png"></label>
         <div class="menu">
             <ul class="list">
-                <li> <a href="#">Home</a> </li>
+                <li> <a href="index.html">Home</a> </li>
                 <li> <a href="#">Category</a> </li>
-                <li> <a href="#">Reccomendations</a> </li>
-                <li> <a href="#">About us</a> </li>
+                <li> <a href="./recommendations/recommendations.html">Reccomendations</a> </li>
+                <li> <a href="./about_us/about_us.html">About us</a> </li>
             </ul>
         </div>
     </nav>
@@ -28,21 +28,21 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!--------------------------------------------------------------------------------------------------------------------------- S E A R C H -->
-    <section id="search">
+    <form id="search" class="searchForm">
         <div class="search-box">
-            <input class="search-text" type="text" placeholder="Search here...">
+            <input class="search-text" id="search_param" type="text" placeholder="Search here...">
             <a href="##" class="icon">
                 <img src="./movies/clipart85921.png" alt="Search icon">
             </a>
         </div>
-    </section>
+    </form>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!------------------------------------------------------------------------------------------------------------------------- F I L T E R S -->
     <section id="filters">
-        <div class="filter">Name</div>
-        <div class="filter">Popular</div>
-        <div class="filter">Newest</div>
+        <div class="filter" id="newest_movies">Newest</div>
+        <div class="filter" id="upcoming_movies">Upcoming</div>
+        <div class="filter" id="popular_movies">Popular</div>
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 <!----------------------------------------------------------------------------------------------------------------------------- T I T L E -->

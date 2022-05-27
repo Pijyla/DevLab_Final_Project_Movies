@@ -12,7 +12,7 @@ input.addEventListener("keyup",()=>{
     let searchTerm = input.value;
     let txt = ''
     searchDropdown.innerHTML = txt
-    if(!searchTerm)return
+    if(!searchTerm){searchDropdown.classList.add("invisible");return}
     fetch(`${BASE_URL}search/movie?${API_KEY}&language=en-US&query=${searchTerm.trim()}`)
     .then(data=>data.json()).then(data=>{
         data.results.map(item=>{

@@ -2,15 +2,39 @@
 
 const API_KEY = 'api_key=08beb287a4aac1ea2289c2ee16e39d87';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const API_URL = BASE_URL + '/discover/movie?' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const POPULAR_URL = BASE_URL + '/trending/movie/week?' + API_KEY
+const NEWEST_URL = BASE_URL + '/movie/now_playing?' + API_KEY
+const UPCOMING_URL = BASE_URL + "/movie/upcoming?" + API_KEY
+const SEARCH_URL = `${BASE_URL}/search/movie?${API_KEY}&language=en-US&query=`
 
 ///////////////////////////////////////////////////////////////////////////////////////  M O V I E S   A N D   P A G I N A T I O N  //
 const main = document.getElementById('main')
-
+const searchParam = document.getElementById("search_param")
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const current = document.getElementById('current')
+
+const newest_movies = document.getElementById("newest_movies");
+const popular_movies = document.getElementById("popular_movies");
+const upcoming_movies = document.getElementById("upcoming_movies")
+popular_movies.addEventListener("click",()=>{
+  getMovies(POPULAR_URL);
+  setGenre()
+})
+
+newest_movies.addEventListener("click",()=>{
+  getMovies(NEWEST_URL);
+  setGenre()
+
+
+})
+
+upcoming_movies.addEventListener("click",()=>{
+  getMovies(UPCOMING_URL);
+  setGenre()
+})
 
 var currentPage = 1;
 var nextPage = 2;
@@ -119,8 +143,8 @@ function getColor(vote){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  S E A R C H  //
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
-const form =  document.getElementById('form');
-const search = document.getElementById('search');
+const form =  document.querySelector('.searchForm');
+const search = document.getElementById('search_param');
 const tagsEl = document.getElementById('tags');
 
 const genres = [
@@ -269,12 +293,12 @@ function clearBtn(){
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  const searchTerm = search.value;
+  const searchTerm = search.value.trim();
+  console.log(SEARCH_URL+searchTerm)
   selectedGenre=[];
   setGenre();
   if(searchTerm) {
-      getMovies(searchURL+'&query='+searchTerm)
+      getMovies(SEARCH_URL+searchTerm)
   }else{
       getMovies(API_URL);
   }
@@ -296,9 +320,9 @@ function openNav(movie) {
           let {name, key, site} = video
 
           if(site == 'YouTube'){
-              
+            let width = document.documentElement.clientWidth
             embed.push(`
-              <iframe width="800" height="505" src="https://www.youtube.com/embed/${key}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="${width}" height="505" src="https://www.youtube.com/embed/${key}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           
           `)
           }
@@ -331,3 +355,13 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("overlay-content").innerHTML=''
 }
+
+const newest = document.getElementById("newest_movies");
+const popular = document.getElementById("popular_movies");
+
+popular.addEventListener("click",()=>{
+  console.log("Tu si stigao")
+  getMovies(POPULAR_URL)
+})
+
+console.log(document.getElementById("popular_movies"))
