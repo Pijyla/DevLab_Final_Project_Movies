@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+:root {
+    --primary: #ddd;
+    --secondary: black; 
+    --dark-grey: #333;
+    --dark: #0f1214;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: var(--light);
+}
+
+body{
+    margin: 0;
+    background-color: black;
+}
+
+img {
+    width: 100%;
+  }
+
+#header {
+  grid-area: header;
+  grid-gap: 20px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+  padding: 15px;
+  border-radius: 20px;
+  width: 98%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  font-size: large;
+  font-weight: bold;
+}
+
+.navbar a:hover{
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.active {
+  background: var(--primary);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#toggler,
+  .navbar label {
+  display: none;
+}
+
+.movie_search{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    color: orange;
+    border-radius: 50px;  
+    width: 80%;
+    margin: auto; 
+    margin-top: 2rem;
+    border: solid 10px #bbb;
+}
+.movie_search q{
+    color: #ffffff;
+}
+
+.movie_search h1{color: orange;
+margin: 0.7rem;}
+
+.invisible {
+    display: none !important;
+}
+
+p>span{
+    color:white}
+
+#movie_search>div{
+    display: flex;
+}
+#movie_search>q{
+    margin-bottom:1.5rem;
+    font-size: 2rem;
+
+}
+#movie_search>div>img{
+    height: 50%;
+    width: 50%;
+    margin-right: 2rem;
+    float: left;
+    border-radius: 5px;
+}
+#movie_search>div>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    display: block;
+    margin: auto;
+    background-color: rgb(255, 105, 130);
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border-radius:2rem;
+    width: 58%;
+    text-align: center;
+}
+
+input{
+    width: 60%;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    font-size: 2rem;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 0 1rem var(--dark-grey);
+    -moz-box-shadow: 0 0 1rem var(--dark-grey);
+    box-shadow: 0 0 1rem var(--dark-grey);   
+}
+
+input:focus{
+    font-size: 2.2rem;
+}
+
+.search_dropdown{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.1rem;
+    flex-wrap: wrap;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    font-size: 0.5rem;
+    margin: 2rem 2rem 1rem 2rem;
+    padding: 1rem;
+}
+
+.search_dropdown>div{
+    display: flex;
+    width: 33%;
+    font-size: 1.2rem;
+}
+
+#search_dropdown img{
+    height: 6rem;
+    width: 4rem;
+}
+#search_dropdown div{
+    flex-basis: 32%;
+    border:2px solid var(--dark-grey);
+}
+
+#similar_movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+#similar_movies>div{
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+
+.movie {
+    box-shadow: var(--shadow);
+    background-color: var(--secondary);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie img {
+    width: 100%; 
+  }
+  
+  .movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .movie-info h3 {
+    margin-top: 0;
+  }
+  
+  .movie-info span {
+    background-color: var(--primary);
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .movie-info span.green {
+    background: green;
+    color: black;
+  }
+  
+  .movie-info span.orange {
+    background-color: orange;
+    color: black;
+  }
+  
+  .movie-info span.red {
+    background-color: red;
+    color: black;
+  }
+  
+  .about-movie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    overflow-x: hidden;
+    color: var(--dark);
+  }
+  
+  .about-movie h3 {
+    color: var(--secondary);
+  }
+  
+  .movie:hover .about-movie {
+    transform:translateY(0);
+  }
+  
+  .watch-trailer{
+    background-color: orange;
+    color:white;
+    font-size: 1rem;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    float: right;
+  }
+  .watch-trailer:hover {
+    background-color: black;
+    color: orange;
+  }
+
+/*************************************************************************************************************************** P A G I N A T I O N */
+
+#pagination {
+    grid-area: pagination;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: var(--light);
+    flex-wrap: wrap;
+  }
+  
+  .page {
+    padding:2rem;
+    cursor:pointer;
+  }
+  
+  .page.disabled {
+    cursor:not-allowed;
+    color: gray;
+  }
+  
+  .current {
+    padding: 0.8rem 1.4rem;
+    border-radius: 50%;
+    border: 0.4rem solid orange;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .embed.hide{
+      display: none;
+  }
+  
+  .embed.show{
+      display: inline-block;
+  }
+  
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+  
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+  
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+  }
+  
+  .dots{
+    margin-top: 30px;
+  }
+  
+  .dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+  }
+  
+  .dots .dot.active{
+    border-color: orange;
+  }
+
+#footer {
+  grid-area: footer;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+}
+  
+.footer-nav ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+}
+
+.footer-nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px){
+    #movie_search{
+        font-size: 1.4rem;
+    }
+
+    #movie_search>div>img{
+        height: 25rem;
+        width: 20rem;
+    }
+
+    #search_dropdown div{
+        flex-basis: 45%;
+    }
+
+    #similar_movies div{
+        flex-basis: 40%;
+        border-radius: 0.7rem;
+    }
+
+    #similar_movies img{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    #movie_search{
+        font-size: 1.4rem;
+    }
+
+    #movie_search>div>img{
+        height:auto;
+        width:100%;
+        align-self: center;
+    }
+
+    #search_dropdown div{
+        flex-basis: 100%;
+    }
+
+    #movie_search>div{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #similar_movies div{
+        flex-basis: 100%;
+        border-radius: 0.5rem;
+    }
+
+}
+
+@media only screen and (min-width: 1400px){
+    #similar_movies div{
+        flex-basis: 20%;
+        border-radius: 0.5rem;
+    }
+}

@@ -61,6 +61,20 @@ img {
 .navbar a {
   text-decoration: none;
   color: black;
+  padding: 1rem;
+  font-size: large;
+  font-weight: bold;
+}
+
+.navbar a:hover{
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.active {
+  background: var(--primary);
+  border-top-left-radius: 20px;
 }
 
 .logo {

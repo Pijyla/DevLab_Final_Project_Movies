@@ -4,67 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/home.css">
     <title>Movies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
 <!-------------------------------------------------------------------------------------------------- H E A D E R  /  N A V I G A T I O N  -->
     
-        <!-- N A V I G A T I O N -->
-        <nav class="navbar">
-            <div class="content">
-              <div class="logo">
-                <a href="#">NDF Movies</a>
-              </div>
-              <ul class="menu-list">
-                <div class="icon cancel-btn">
-                  <i class="fas fa-times"></i>
-                </div>
-                <li> <a href="#">Home</a> </li>
-                <li> <a href="#">Movies</a> </li>
-                <li> <a href="#">Reccomendations</a> </li>
-                <li> <a href="#">About us</a> </li>
-              </ul>
-              <div class="icon menu-btn">
-                <i class="fas fa-bars"></i>
-              </div>
-            </div>
-        </nav>
+<header id="header">
+    <!-- N A V I G A T I O N -->
+    <nav class="navbar" >
+        <a href="#" class="logo">LOGO</a>
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><img class="menu-image" src="./images/menu_icon.png"></label>
+        <div class="menu">
+            <ul class="list">
+                <li> <a class="active" href="index.html">HOME</a> </li>
+                <li> <a href="./html/categories.html">CATEGORIES</a> </li>
+                <li> <a href="./html/recommendations.html">RECOMMENDATIONS</a> </li>
+                <li> <a href="./html/about_us.html">ABOUT US</a> </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!--------------------------------------------------------------------------------------------------------------------------- S L I D E R -->
     <section id="slider">
         
         <div class="slide1">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide2">
-            <img src="./movies/img-1.jpg" />
-        </div>
-        <div class="slide3">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide4">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide5">
-            <img src="./movies/img-1.jpg" />
-        </div>
-        <div class="slide6">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide7">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide8">
-            <img src="./movies/img-1.jpg" />
-        </div>
-        <div class="slide9">
-            <img src="./movies/img-1.jpg"/>
-        </div>
-        <div class="slide10">
-            <img src="./movies/img-1.jpg"/>
+            <img src="./images/img-1.jpg"/>
         </div>
 
         <a id="prev" onclick="plusSlides(-3)">&#10094;</a>
@@ -73,185 +43,32 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
     
 <!------------------------------------------------------------------------------------------------------------------------------- B E S T -->
-    <section id="best">
-       
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
-        
+    <section id="best">        
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
 <!--------------------------------------------------------------------------------------------------------------------- T O P   R A T E D -->
     <section id="top-rated">
-        
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
+    </section>
 
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-            </div>
-        </div>
+    <section id="myNav" class="overlay">
 
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="./movies/img-2.jpeg">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <div class="green"><span class="green">9.8</span></div>
-            </div>
-            <div class="about-movie">
-                <h3>About movie</h3>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Voluptatem saepe quae eligendi aliquam natus voluptate deserunt maxime, 
-                officia unde labore veritatis dignissimos quisquam commodi debitis harum 
-                eaque similique. Ad, necessitatibus?
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-                dignissimos quisquam commodi debitis harum
-            </div>
-        </div>
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
 
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
-    
+
+    <section id="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+    </section>
+
 <!---------------------------------------------------------------------------------------------------------------------------- F O O T E R-->
     <footer id="footer">
         <!-- N A V I G A T I O N -->
@@ -265,6 +82,6 @@
         </nav>
     </footer>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
-<script src="index.js"></script>
+<script src="./js/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+:root {
+    --primary: #ddd;
+    --secondary: #06464a; 
+    --dark-grey: #333;
+    --dark: #0f1214;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
+}
+
+/********************************************************************************************************************************* H T M L */
+
+html {
+    box-sizing: border-box;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: var(--light);
+}
+
+/********************************************************************************************************************************* B O D Y */
+
+body {
+    padding: 0rem 0rem;
+    background: black;
+    margin: 1rem;
+    line-height: 1.4;
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "slider slider"
+      "top-rated best"
+      "pagination best"
+      "footer footer";
+    grid-template-rows: repeat(5, 1fr);  
+    grid-template-columns: 2fr 1fr;
+    grid-row-gap: 5rem;
+    grid-column-gap: 0.5rem;
+    height: 100vh;
+} 
+
+img {
+    width: 100%;
+}
+
+/***************************************************************************************************************************** H E A D E R */
+
+#header {
+    grid-area: header;
+    grid-gap: 20px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orange;
+    padding: 15px;
+    border-radius: 20px;
+    width: 98%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+  
+.navbar a:hover{
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--dark);
+}
+  
+.active {
+    background: var(--primary);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+  
+.logo {
+    margin-right: 50px;
+}
+  
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+  
+#toggler,
+    .navbar label {
+    display: none;
+}
+  
+/***************************************************************************************************************************** S L I D E R */
+
+#slider {
+    grid-area: slider;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'slide1 slide1 slide1';
+}
+.slide1 {
+    grid-area: slide1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/********************************************************************************************************************************* B E S T */
+
+#best { 
+    grid-area: best;
+    display: grid; 
+    grid-gap: 1rem;
+    grid-row-gap: 3rem;
+    width: 88%;
+    padding: 2rem;
+    background: var(--dark);
+    border-radius: 50px;
+}
+
+.best-movie {
+    box-shadow: var(--shadow);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.best-movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    letter-spacing: 0.8px;
+    border-radius: 50px;
+}
+
+.best-movie-info h3 {
+    font-size: 1.5rem;
+}
+
+.best-movie-info span {
+    background-color: var(--primary);
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+.best-movie-info span.green {
+    background: green;
+    color: black;
+}
+
+.best-movie-info span.orange {
+    background-color: orange;
+    color: black;
+}
+
+.best-movie-info span.red {
+    background-color: red;
+    color: black;
+}
+
+.about-best-movie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    overflow-x: hidden;
+    color: var(--dark);
+}
+
+.about-best-movie h3 {
+    color: var(--secondary);
+}
+
+.movie:hover .about-best-movie {
+    transform:translateY(0);
+}
+
+/*********************************************************************************************************************** T O P   R A T E D */
+
+#top-rated { 
+    grid-area: top-rated; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 2rem;
+    border-radius: 50px;
+}
+
+.movie {
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.movie img {
+    width: 100%; 
+}
+
+.movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.movie-info span {
+    background-color: var(--primary);
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    color: black;
+}
+
+.movie-info span.green {
+    background: green;
+    color: black;
+}
+
+.movie-info span.orange {
+    background-color: orange;
+    color: black;
+}
+
+.movie-info span.red {
+    background-color: red;
+    color: black;
+}
+
+.about-movie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    overflow-x: hidden;
+    color: var(--dark);
+}
+
+.about-movie h3 {
+    color: black;
+}
+
+.movie:hover .about-movie {
+    transform:translateY(0);
+}
+
+.watch-trailer{
+    background-color: orange;
+    color:white;
+    font-size: 1rem;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    float: right;
+}
+.watch-trailer:hover {
+    background-color: black;
+    color: orange;
+}
+
+/*************************************************************************************************************************** P A G I N A T I O N */
+
+#pagination {
+    grid-area: pagination;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: var(--light);
+    flex-wrap: wrap;
+  }
+  
+.page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    cursor:pointer;
+}
+
+.page.disabled {
+    cursor:not-allowed;
+    color: gray;
+}
+
+.current {
+    padding: 0.8rem 1.4rem;
+    border-radius: 50%;
+    border: 0.4rem solid orange;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/***************************************************************************************************************************** F O O T E R */
+
+#footer {
+grid-area: footer;
+background: var(--primary);
+box-shadow: var(--shadow);
+}
+
+.footer-nav ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+}
+
+.footer-nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .embed.hide{
+      display: none;
+  }
+  
+  .embed.show{
+      display: inline-block;
+  }
+  
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+  
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+  
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+  }
+  
+  .dots{
+    margin-top: 30px;
+  }
+  
+  .dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+  }
+  
+  .dots .dot.active{
+    border-color: orange;
+  }
+
+/************************************************************************************************************************ M E D I A  600px */
+
+/* Stack the layout on small devices/viewports - Mobile phones. */
+@media all and (max-width: 600px) {
+body { 
+    grid-template-areas: 
+    "header"
+    "slider"
+    "top-rated"
+    "pagination"
+    "best"
+    "footer";
+    grid-template-rows: repeat(6, 1fr);  
+    grid-template-columns: 1fr;
+    }
+.menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    }
+.list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    }
+.menu-image {
+    width: 25px;
+    }
+.navbar {
+    width: 95%;
+}
+.navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    }
+#toggler:checked ~ .menu {
+    max-height: 100%;
+    }
+#slider { 
+    grid-area: slider;
+    display: block;
+    position: relative;
+    margin-top: 13rem;
+    grid-template-areas: 
+    'slide1';
+    }
+.slide1 {
+    grid-area: slide1;
+    margin: 0;
+    padding: 0;
+    }
+#top-rated {
+    grid-template-columns: 1fr;
+    }
+.movie-info h3 {
+  font-size: 1.5rem;
+}
+.movie-info span {
+    font-size: 1.5rem;
+}
+#pagination {
+    grid-template-columns: 1fr;
+    }
+#best { 
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    grid-row-gap: 3rem;
+    width: 86.5%;
+    }
+.footer-nav ul {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    }
+}
+
+/************************************************************************************************************************ M E D I A  768px */
+
+/* Stack the layout on medium devices/viewports - Tablets. */
+@media all and (min-width: 600px) and (max-width: 768px) {
+    body { 
+        grid-template-areas: 
+        "header header"
+        "slider slider"
+        "top-rated top-rated"
+        "pagination pagination"
+        "best best"
+        "footer footer";
+        grid-template-rows: repeat(6, 1fr);  
+        grid-template-columns: repeat(2, 1fr);
+        }
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        }
+    .list {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        }
+    .menu-image {
+        width: 25px;
+        }
+    .navbar {
+        width: 95%;
+    }
+    .navbar a {
+        font-size: 1rem;
+    }
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        }
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+        }
+    #slider {
+        grid-area: slider;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-areas: 
+        'slide1';
+        }
+    .slide1 {
+        grid-area: slide1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        }
+    #top-rated {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    #pagination {
+        grid-template-columns: 1fr 1fr;
+        }
+    #best { 
+        display: grid;
+        grid-row-gap: 3rem;
+        grid-template-columns: 1fr;
+        width: 90%;
+        }
+    .footer-nav ul {
+        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        padding: 0;
+        }
+    }
