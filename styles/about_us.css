@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+:root {
+    --primary: #ddd;
+    --secondary: #06464a; 
+    --dark-grey: #333;
+    --dark: #0f1214;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -11,7 +22,62 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-  
+
+/***************************************************************************************************************************** H E A D E R */
+
+#header {
+  grid-area: header;
+  grid-gap: 20px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+  padding: 15px;
+  border-radius: 20px;
+  width: 98%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  font-size: large;
+  font-weight: bold;
+}
+
+.navbar a:hover{
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.active {
+  background: var(--primary);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#toggler,
+  .navbar label {
+  display: none;
+}
+
+
+
 .column {
   float: left;
   width: 33.3%;
