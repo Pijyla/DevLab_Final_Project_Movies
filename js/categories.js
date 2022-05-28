@@ -19,10 +19,7 @@ const current = document.getElementById('current')
 const newest_movies = document.getElementById("newest_movies");
 const popular_movies = document.getElementById("popular_movies");
 const upcoming_movies = document.getElementById("upcoming_movies")
-<<<<<<< HEAD:js/categories.js
 
-=======
->>>>>>> c1b6a3d14ceec8fbfb83b4d21115cb8cf1d4c823:categories.js
 popular_movies.addEventListener("click",()=>{
   getMovies(POPULAR_URL);
   setGenre()
@@ -31,11 +28,7 @@ popular_movies.addEventListener("click",()=>{
 newest_movies.addEventListener("click",()=>{
   getMovies(NEWEST_URL);
   setGenre()
-<<<<<<< HEAD:js/categories.js
-=======
 
-
->>>>>>> c1b6a3d14ceec8fbfb83b4d21115cb8cf1d4c823:categories.js
 })
 
 upcoming_movies.addEventListener("click",()=>{
