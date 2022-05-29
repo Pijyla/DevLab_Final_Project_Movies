@@ -15,23 +15,26 @@ const searchParam = document.getElementById("search_param")
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const current = document.getElementById('current')
-
+const magnifier = document.getElementById("magnifier")
 const newest_movies = document.getElementById("newest_movies");
 const popular_movies = document.getElementById("popular_movies");
 const upcoming_movies = document.getElementById("upcoming_movies")
 
 popular_movies.addEventListener("click",()=>{
+  selectedGenre=[];
   getMovies(POPULAR_URL);
   setGenre()
 })
 
 newest_movies.addEventListener("click",()=>{
+  selectedGenre=[];
   getMovies(NEWEST_URL);
   setGenre()
 
 })
 
 upcoming_movies.addEventListener("click",()=>{
+  selectedGenre=[];
   getMovies(UPCOMING_URL);
   setGenre()
 })
@@ -76,7 +79,6 @@ getMovies(API_URL);
 function getMovies(url) {
   lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
-        console.log(data.results)
         if(data.results.length !== 0){
             showMovies(data.results);
             currentPage = data.page;
@@ -125,7 +127,6 @@ function showMovies(data){
         main.appendChild(movieEl);
 
         document.getElementById(id).addEventListener('click', () => {
-          console.log(id)
           openNav(movie)
         })
     })
@@ -249,7 +250,6 @@ function setGenre() {
                     selectedGenre.push(genre.id);
                 }
             }
-            console.log(selectedGenre)
             getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')))
             highlightSelection()
         })
@@ -293,8 +293,16 @@ function clearBtn(){
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  lookUpSearchbar()
+})
+
+magnifier.addEventListener("click",(e)=>{
+  e.preventDefault;
+  lookUpSearchbar()
+})
+
+const lookUpSearchbar = () =>{
   const searchTerm = search.value.trim();
-  console.log(SEARCH_URL+searchTerm)
   selectedGenre=[];
   setGenre();
   if(searchTerm) {
@@ -302,7 +310,7 @@ form.addEventListener('submit', (e) => {
   }else{
       getMovies(API_URL);
   }
-})
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////  M O V I E   T R A I L E R S  //
 
@@ -312,7 +320,6 @@ function openNav(movie) {
   let id = movie.id;
   let embed = [];
   fetch(BASE_URL + '/movie/'+id+'/videos?'+API_KEY).then(res => res.json()).then(videoData => {
-    console.log(videoData);
     if(videoData){
       document.getElementById("myNav").style.width = "100%";
       if(videoData.results.length > 0){
@@ -355,13 +362,3 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("overlay-content").innerHTML=''
 }
-
-const newest = document.getElementById("newest_movies");
-const popular = document.getElementById("popular_movies");
-
-popular.addEventListener("click",()=>{
-  console.log("Tu si stigao")
-  getMovies(POPULAR_URL)
-})
-
-console.log(document.getElementById("popular_movies"))
