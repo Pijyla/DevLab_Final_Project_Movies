@@ -245,11 +245,5 @@ currentQUestion=0;
 });
 
 function go() {
-console.log(genre);
-console.log(duration);
-console.log(important);
-API_URL = BASE_URL + '/discover/movie?' + API_KEY + genre + important + duration;
-console.log(API_URL);
-
-
+API_URL = BASE_URL + '/discover/movie?' + API_KEY +"&" + genre + important + duration;
 }
