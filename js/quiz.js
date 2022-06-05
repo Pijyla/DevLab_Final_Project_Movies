@@ -20,7 +20,7 @@ main = document.querySelector('.about-section');
 let questions = [{
   question: '1:Whats your favorite genre?',
   answers: [{
-      value: 'Romance/Drama',
+      value: 'History/Drama',
     },
     {
       value: 'Comedy/Adventure',
@@ -186,8 +186,8 @@ function checkAnswer(e) {
     this.classList.add('orange');
   } 
 
-  if (e.target.innerText == "Romance/Drama") {
-genre = "with_genres=18,10794&"
+  if (e.target.innerText == "History/Drama") {
+genre = "with_genres=36,18&"
   }  else if (e.target.innerText == "Comedy/Adventure") {
     genre = "with_genres=12,35&"
   } else if (e.target.innerText == "Action/Thriller") {
