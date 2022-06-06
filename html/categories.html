@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/categories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <title>Categories</title>
 </head>
 <body>
@@ -12,16 +13,16 @@
 <header id="header">
     <!-- N A V I G A T I O N -->
     <nav class="navbar" >
-        <a href="#" class="logo">LOGO</a>
+        <a href="/index.html" class="logo"><img src="/images/logo.jpg" alt="Logo"></a>
         <input type="checkbox" id="toggler">
-        <label for="toggler"><img class="menu-image" src="/images/menu_icon.png"></label>
+        <label for="toggler"><img class="menu-image" src="./images/menu_icon.png"></label>
         <div class="menu">
             <ul class="list">
-                <li> <a  href="../index.html">HOME</a> </li>
-                <li> <a class="active" href="../html/categories.html">CATEGORIES</a> </li>
-                <li> <a href="../html/recommendations.html">RECOMMENDATIONS</a> </li>
-                <li> <a href="../html/about_us.html">ABOUT US</a> </li>
-                <li> <a href="../html/quiz.html">QUIZ</a> </li>
+                <li> <a class="active" href="/index.html">HOME</a> </li>
+                <li> <a href="/html/categories.html">CATEGORIES</a> </li>
+                <li> <a href="/html/recommendations.html">RECOMMENDATIONS</a> </li>
+                <li> <a href="/html/quiz.html">QUIZ</a> </li>
+                <li> <a href="/html/about_us.html">ABOUT US</a> </li>
             </ul>
         </div>
     </nav>
@@ -74,17 +75,24 @@
         <div class="page" id="next">Next Page</div>
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------- F O O T E R-->
-<footer id="footer">
-    <!-- N A V I G A T I O N -->
-    <nav class="footer-nav">
-        <ul>
-            <li> <a href="../index.html">Home</a> </li>
-            <li> <a href="./categories.html">Categories</a> </li>
-            <li> <a href="./recommendations.html">Recommendations</a> </li>
-            <li> <a href="./about_us.html">About us</a> </li>
-            <li> <a href="./quiz.html">Quiz</a> </li>
-        </ul>
-    </nav>
+<footer id="footer" class="footer">
+    <div class="footer-right">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="/index.html">Home</a>
+            <a href="/html/categories.html">Categories</a>
+            <a href="/html/recommendations.html">Reccomendations</a>
+            <a href="/html/quiz.html">Quiz</a>
+            <a href="/html/about_us.html">About us</a>
+        </p>
+        <p>DevelopersLab &copy; 2022</p>
+    </div>
 </footer>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 <script src="/js/categories.js"></script>

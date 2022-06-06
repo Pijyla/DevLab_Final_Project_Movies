@@ -195,7 +195,7 @@ img {
     color: var(--secondary);
 }
 
-.movie:hover .about-best-movie {
+.best-movie:hover .about-best-movie {
     transform:translateY(0);
 }
 
@@ -361,13 +361,13 @@ box-shadow: var(--shadow);
   
   .footer .footer-left p {
     color: black;
-    font-size: 14px;
+    font-size: 0.7rem;
     margin: 0;
   }
   /* Footer links */
   
   .footer p.footer-links {
-    font-size: 18px;
+    font-size: 0.85rem;
     font-weight: bold;
     color: black;
     transition: ease .25s;
@@ -410,21 +410,6 @@ box-shadow: var(--shadow);
   }
   
   .footer .footer-right a:hover{transform:scale(1.6); -webkit-transform:scale(1.6); color: white;}
-  
-  /* Media Queries */
-  
-  @media (max-width: 600px) {
-    .footer .footer-left, .footer .footer-right {
-      text-align: center;
-    }
-    .footer .footer-right {
-      float: none;
-      margin: 0 auto 20px;
-    }
-    .footer .footer-left p.footer-links {
-      line-height: 1.8;
-    }
-  }
   
 
 /* The Overlay (background) */
@@ -588,10 +573,24 @@ body {
     grid-row-gap: 3rem;
     width: 86.5%;
     }
-.footer-nav ul {
-    grid-template-columns: repeat(4, 1fr);
-    display: grid;
-    }
+.footer .footer-left, .footer .footer-right {
+    text-align: center;
+}
+.footer .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+}
+.footer .footer-left p.footer-links {
+    line-height: 1.8;
+}
+.footer .footer-left p {
+    font-size: 10px;
+  }
+  /* Footer links */
+  
+.footer p.footer-links {
+font-size: 10px;
+}
 }
 
 /************************************************************************************************************************ M E D I A  768px */
@@ -661,9 +660,22 @@ body {
         grid-template-columns: 1fr;
         width: 90%;
         }
-    .footer-nav ul {
-        grid-template-columns: repeat(4, 1fr);
-        display: grid;
-        padding: 0;
+    .footer .footer-left, .footer .footer-right {
+        text-align: center;
+    }
+    .footer .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+    }
+    .footer .footer-left p.footer-links {
+        line-height: 1.8;
+    }
+    .footer .footer-left p {
+        font-size: 14px;
         }
+        /* Footer links */
+        
+    .footer p.footer-links {
+    font-size: 14px;
+    }
     }

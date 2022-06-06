@@ -2,7 +2,7 @@
 
 :root {
     --primary: #ddd;
-    --secondary: black; 
+    --secondary: #06464a; 
     --dark-grey: #333;
     --dark: #0f1214;
     --light: #fff;
@@ -10,14 +10,18 @@
 }
 
 html {
-    box-sizing: border-box;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    color: var(--light);
+  box-sizing: border-box;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  color: var(--light);
 }
 
 body{
-    margin: 0;
-    background-color: black;
+  margin: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 img {
@@ -37,14 +41,13 @@ img {
   background-color: orange;
   padding: 15px;
   border-radius: 20px;
-  width: 98%;
 }
 
 .navbar a {
   text-decoration: none;
   color: black;
   padding: 1rem;
-  font-size: large;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -61,7 +64,14 @@ img {
 }
 
 .logo {
-  margin-right: 50px;
+  max-width: 180px;
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 200px;
 }
 
 .list {
@@ -106,6 +116,7 @@ p>span{
 
 #movie_search>div{
     display: flex;
+    left: 0;
 }
 #movie_search>q{
     margin-bottom:1.5rem;
@@ -113,11 +124,12 @@ p>span{
 
 }
 #movie_search>div>img{
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     margin-right: 2rem;
     float: left;
     border-radius: 5px;
+    left: 0;
 }
 #movie_search>div>div{
     display: flex;
@@ -194,7 +206,7 @@ input:focus{
 
 .movie {
     box-shadow: var(--shadow);
-    background-color: var(--secondary);
+    background-color: black;
     position: relative;
     overflow: hidden;
   }
@@ -309,7 +321,6 @@ input:focus{
 
 
 
-
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
@@ -400,27 +411,86 @@ input:focus{
   .dots .dot.active{
     border-color: orange;
   }
-
+  
 #footer {
-  grid-area: footer;
-  background: var(--primary);
+  background: orange;
   box-shadow: var(--shadow);
+  }
+  
+  /* #footer-section {
+      width: 100%;
+      display: inline-block;
+      background: black;
+      color: orange;
+      height: 20vh;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+    } */
+    
+.footer {
+  background-color: orange;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.footer .footer-left p {
+  color: black;
+  font-size: 0.7rem;
+  margin: 0;
+}
+/* Footer links */
+
+.footer p.footer-links {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: black;
+  transition: ease .25s;
+}
+
+.footer p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: var(--dark);
+  transition: ease .25s;
+  padding: 1rem;
+}
+
+.footer p.footer-links a:hover {
+  background: var(--dark);
+  border-radius: 50px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer .footer-right {
+  float: right;
+  max-width: 180px;
+  padding: 0.6rem;
+}
+
+.footer .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 2px;
+  font-size: 20px;
+  color: orange;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
 }
   
-.footer-nav ul {
-    display: grid;
-    list-style: none;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0;
-}
-
-.footer-nav a {
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: #333;
-    font-size: 1rem;
-}
+.footer .footer-right a:hover{transform:scale(1.6); -webkit-transform:scale(1.6); color: white;}
+  
+  
 
 @media only screen and (max-width: 768px){
     #movie_search{
@@ -444,6 +514,53 @@ input:focus{
     #similar_movies img{
         width: 100%;
         height: auto;
+    }
+
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    }
+  .list {
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      }
+  .menu-image {
+      width: 25px;
+      }
+  .navbar {
+      width: 95%;
+  }
+  .navbar a {
+      font-size: 0.9rem;
+      padding: 0.2rem;
+  }
+  .navbar label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      }
+  #toggler:checked ~ .menu {
+      max-height: 100%;
+      }
+  .footer .footer-left, .footer .footer-right {
+      text-align: center;
+  }
+  .footer .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+  }
+  .footer .footer-left p.footer-links {
+      line-height: 1.8;
+  }
+  .footer .footer-left p {
+      font-size: 14px;
+      }
+      /* Footer links */
+      
+  .footer p.footer-links {
+    font-size: 14px;
     }
 
 }
@@ -472,6 +589,49 @@ input:focus{
         flex-basis: 100%;
         border-radius: 0.5rem;
     }
+
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    }
+  .list {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      }
+  .menu-image {
+      width: 25px;
+      }
+  .navbar {
+      width: 94%;
+  }
+  .navbar label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      }
+  #toggler:checked ~ .menu {
+      max-height: 100%;
+      }
+  .footer .footer-left, .footer .footer-right {
+      text-align: center;
+  }
+  .footer .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+  }
+  .footer .footer-left p.footer-links {
+      line-height: 1.8;
+  }
+  .footer .footer-left p {
+      font-size: 10px;
+    }
+    /* Footer links */
+    
+  .footer p.footer-links {
+  font-size: 10px;
+  }
 
 }
 

@@ -138,7 +138,7 @@ function bestMovies(data){
     let movies = data.slice(0, 5);
     best.innerHTML = '';
     movies.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview, id} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('best-movie');
         movieEl.innerHTML = `
@@ -150,9 +150,15 @@ function bestMovies(data){
         <div class="about-best-movie">
             <h3>About movie</h3>
             ${overview}
+            <br/> 
+            <button class="watch-trailer" id="${id}">Watch trailer</button>
         </div>
         `
         best.appendChild(movieEl);
+
+        document.getElementById(id).addEventListener('click', () => {
+          openNav(movie)
+        })
     })
 }
 
@@ -164,7 +170,6 @@ function openNav(movie) {
   let id = movie.id;
   let embed = [];
   fetch(BASE_URL + '/movie/'+id+'/videos?'+API_KEY).then(res => res.json()).then(videoData => {
-    console.log(videoData);
     if(videoData){
       document.getElementById("myNav").style.width = "100%";
       if(videoData.results.length > 0){

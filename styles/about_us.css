@@ -9,16 +9,22 @@
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background: orange;
-}
-  
 html {
   box-sizing: border-box;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  color: var(--dark);
 }
-  
+
+body{
+  margin: 0;
+  background-color: black;
+}
+
+h2 {
+  text-align: center;
+  color: orange;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -38,7 +44,7 @@ html {
   background-color: orange;
   padding: 15px;
   border-radius: 20px;
-  width: 98%;
+  width: 100%;
 }
 
 .navbar a {
@@ -62,21 +68,26 @@ html {
 }
 
 .logo {
-  margin-right: 50px;
+  max-width: 180px;
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 200px;
 }
 
 .list {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 0.5rem;
 }
 
 #toggler,
   .navbar label {
   display: none;
 }
-
-
 
 .column {
   float: left;
@@ -88,7 +99,7 @@ html {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
-  background: white;
+  background: var(--primary);
 }
   
 .about-section {
@@ -109,7 +120,8 @@ html {
 }
   
 .title {
-    color: grey;
+    color: black;
+    font-weight: bold;
 }
   
 .button {
@@ -128,10 +140,182 @@ html {
   background-color: orange;
   color: black;
 }
+
+#footer {
+  grid-area: footer;
+  background: orange;
+  box-shadow: var(--shadow);
+  }
   
-@media screen and (max-width: 600px) {
-  .column {
+  /* #footer-section {
+      width: 100%;
+      display: inline-block;
+      background: black;
+      color: orange;
+      height: 20vh;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+    } */
+    
+    .footer {
+      background-color: orange;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      padding: 1rem;
+      border-radius: 20px;
+    }
+    
+    .footer .footer-left p {
+      color: black;
+      font-size: 14px;
+      margin: 0;
+    }
+    /* Footer links */
+    
+    .footer p.footer-links {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      transition: ease .25s;
+    }
+    
+    .footer p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: var(--dark);
+      transition: ease .25s;
+      padding: 1rem;
+    }
+    
+    .footer p.footer-links a:hover {
+      background: var(--dark);
+      border-radius: 50px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .footer .footer-right {
+      float: right;
+      max-width: 180px;
+      padding: 0.4rem;
+    }
+    
+    .footer .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: black;
+      border-radius: 2px;
+      font-size: 20px;
+      color: orange;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition:all .25s;
+    }
+    
+    .footer .footer-right a:hover{transform:scale(1.6); -webkit-transform:scale(1.6); color: white;}
+    
+/************************************************************************************************************************ M E D I A  600px */
+
+/* Stack the layout on small devices/viewports - Mobile phones. */
+@media all and (max-width: 600px) {
+.menu {
     width: 100%;
-    display: block;
+    max-height: 0;
+    overflow: hidden;
+    }
+.list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    }
+.menu-image {
+    width: 25px;
+    }
+.navbar {
+    width: 100%;
+}
+.navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    }
+#toggler:checked ~ .menu {
+    max-height: 100%;
+    }
+.footer .footer-left, .footer .footer-right {
+    text-align: center;
+}
+.footer .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+}
+.footer .footer-left p.footer-links {
+    line-height: 1.8;
+}
+.footer .footer-left p {
+    font-size: 10px;
+  }
+  /* Footer links */
+  
+.footer p.footer-links {
+font-size: 10px;
+}
+}
+
+/************************************************************************************************************************ M E D I A  768px */
+
+/* Stack the layout on medium devices/viewports - Tablets. */
+@media all and (min-width: 600px) and (max-width: 768px) {
+
+.menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    }
+.list {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    }
+.menu-image {
+    width: 25px;
+    }
+.navbar {
+    width: 100%;
+}
+.navbar a {
+    font-size: 1rem;
+}
+.navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    }
+#toggler:checked ~ .menu {
+    max-height: 100%;
+    }
+.footer .footer-left, .footer .footer-right {
+    text-align: center;
+}
+.footer .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+}
+.footer .footer-left p.footer-links {
+    line-height: 1.8;
+}
+.footer .footer-left p {
+    font-size: 14px;
+    }
+    /* Footer links */
+    
+.footer p.footer-links {
+  font-size: 14px;
   }
 }
