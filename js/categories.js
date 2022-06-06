@@ -19,24 +19,38 @@ const magnifier = document.getElementById("magnifier")
 const newest_movies = document.getElementById("newest_movies");
 const popular_movies = document.getElementById("popular_movies");
 const upcoming_movies = document.getElementById("upcoming_movies")
+const lowerSlider = document.querySelector('#lower');
+const upperSlider = document.querySelector('#upper');
 
 popular_movies.addEventListener("click",()=>{
   selectedGenre=[];
   getMovies(POPULAR_URL);
-  setGenre()
+  setGenre();
+  lowerSlider.value = 0;
+  upperSlider.value = 10;
+  upperLable.innerHTML= "Value:"+ upperSlider.value;
+  lowerLable.innerHTML= "Value:"+ lowerSlider.value
 })
 
 newest_movies.addEventListener("click",()=>{
   selectedGenre=[];
   getMovies(NEWEST_URL);
-  setGenre()
+  setGenre();
+  lowerSlider.value = 0;
+  upperSlider.value = 10;
+  upperLable.innerHTML= "Value:"+ upperSlider.value;
+  lowerLable.innerHTML= "Value:"+ lowerSlider.value
 
 })
 
 upcoming_movies.addEventListener("click",()=>{
   selectedGenre=[];
   getMovies(UPCOMING_URL);
-  setGenre()
+  setGenre();
+  lowerSlider.value = 0;
+  upperSlider.value = 10;
+  upperLable.innerHTML= "Value:"+ upperSlider.value;
+  lowerLable.innerHTML= "Value:"+ lowerSlider.value
 })
 
 var currentPage = 1;
@@ -250,7 +264,8 @@ function setGenre() {
                     selectedGenre.push(genre.id);
                 }
             }
-            getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')))
+            // getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')))
+            getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(','))+"&vote_average.gte="+lowerSlider.value+"&vote_average.lte="+upperSlider.value)
             highlightSelection()
         })
         tagsEl.append(t);
@@ -285,7 +300,7 @@ function clearBtn(){
         clear.addEventListener('click', () => {
             selectedGenre = [];
             setGenre();            
-            getMovies(API_URL);
+            getMovies(API_URL+"&vote_average.gte="+lowerSlider.value+"&vote_average.lte="+upperSlider.value);
         })
         tagsEl.append(clear);
     }
@@ -310,6 +325,10 @@ const lookUpSearchbar = () =>{
   }else{
       getMovies(API_URL);
   }
+  lowerSlider.value = 0;
+  upperSlider.value = 10;
+  upperLable.innerHTML= "Value:"+ upperSlider.value;
+  lowerLable.innerHTML= "Value:"+ lowerSlider.value
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////  M O V I E   T R A I L E R S  //
@@ -362,3 +381,30 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("overlay-content").innerHTML=''
 }
+
+
+var lowerVal = parseInt(lowerSlider.value);
+var upperVal = parseInt(upperSlider.value);
+lowerLable = document.getElementById("lowerLabel")
+lowerLable.innerHTML= "Value:"+ lowerSlider.value
+upperLable = document.getElementById("upperLabel")
+upperLable.innerHTML= "Value:"+ upperSlider.value
+lowerSlider.addEventListener("input",()=>{
+if(parseInt(lowerSlider.value)>=parseInt(upperSlider.value)){
+  upperSlider.value = parseInt(lowerSlider.value)+1
+}
+if(parseInt(lowerSlider.value)===10){lowerSlider.value=9}
+lowerLable.innerHTML= "Value:"+ lowerSlider.value
+upperLable.innerHTML= "Value:"+ upperSlider.value
+getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(','))+"&vote_average.gte="+
+            lowerSlider.value+"&vote_average.lte="+upperSlider.value)
+})
+upperSlider.addEventListener("input",()=>{
+if(parseInt(lowerSlider.value )>=parseInt(upperSlider.value)){
+  upperSlider.value = parseInt(lowerSlider.value)+1
+}
+upperLable.innerHTML= "Value:"+ upperSlider.value
+lowerLable.innerHTML= "Value:"+ lowerSlider.value
+getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(','))+"&vote_average.gte="+
+            lowerSlider.value+"&vote_average.lte="+upperSlider.value)
+})
