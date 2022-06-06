@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/categories.css">
+    <link rel="stylesheet" href="../styles/categories.css">
     <title>Categories</title>
 </head>
 <body>
@@ -17,11 +17,11 @@
         <label for="toggler"><img class="menu-image" src="/images/menu_icon.png"></label>
         <div class="menu">
             <ul class="list">
-                <li> <a class="active" href="/index.html">HOME</a> </li>
-                <li> <a href="./categories.html">CATEGORIES</a> </li>
-                <li> <a href="./recommendations.html">RECOMMENDATIONS</a> </li>
-                <li> <a href="./about_us.html">ABOUT US</a> </li>
-                <li> <a href="./quiz.html">QUIZ</a> </li>
+                <li> <a  href="../index.html">HOME</a> </li>
+                <li> <a class="active" href="../html/categories.html">CATEGORIES</a> </li>
+                <li> <a href="../html/recommendations.html">RECOMMENDATIONS</a> </li>
+                <li> <a href="../html/about_us.html">ABOUT US</a> </li>
+                <li> <a href="../html/quiz.html">QUIZ</a> </li>
             </ul>
         </div>
     </nav>
@@ -47,7 +47,19 @@
     </section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 <!----------------------------------------------------------------------------------------------------------------------------- T I T L E -->
-    <section id="title"><h1>You searched for this:</h1></section>
+    <section id="title">
+        <div id = "lables_slider">
+            <p id= "p_slider">
+                <label for="lower" id="lowerLabel">Value</label>
+                <label for="upper" id="upperLabel">Value:</label>
+            </p>
+        
+        <span class="multi-range">
+        <input type="range" min="0" max="10" value="0" id="lower">
+        <input type="range" min="0" max="10" value="10" id="upper">
+        </span>
+        </div>
+        <h1>You searched for this:</h1></section>
 <!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
     <section id="tags">
@@ -78,10 +90,11 @@
     <!-- N A V I G A T I O N -->
     <nav class="footer-nav">
         <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">Movies</a> </li>
-            <li> <a href="#">Reccomendations</a> </li>
-            <li> <a href="#">About us</a> </li>
+            <li> <a href="../index.html">Home</a> </li>
+            <li> <a href="./categories.html">Categories</a> </li>
+            <li> <a href="./recommendations.html">Recommendations</a> </li>
+            <li> <a href="./about_us.html">About us</a> </li>
+            <li> <a href="./quiz.html">Quiz</a> </li>
         </ul>
     </nav>
 </footer>
