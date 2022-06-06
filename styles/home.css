@@ -337,17 +337,6 @@ grid-area: footer;
 background: orange;
 box-shadow: var(--shadow);
 }
-
-/* #footer-section {
-    width: 100%;
-    display: inline-block;
-    background: black;
-    color: orange;
-    height: 20vh;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-  } */
   
   .footer {
     background-color: orange;
