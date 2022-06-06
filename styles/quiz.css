@@ -1,0 +1,80 @@
+.orange {
+    background: orange !important;
+    box-shadow: 6px 6px 12px #68a6ae, -6px -6px 12px orangered;
+  }
+  
+  .box {
+    border-radius: 19px;
+    padding: 15px 35px;
+    background: rgb(54, 54, 54);
+    box-shadow: 5px 5px 10px #b7d1d3, -5px -5px 10px #e9ffff;
+    width: clamp(800px,80%,800px);
+    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .box .question {
+    margin-bottom: 25px;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    padding: 25px 18px;
+  }
+  .box .answers-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  .box .answers-box .answer {
+    cursor: pointer;
+    border-radius: 19px;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    border: none;
+    width: 30%;
+    padding: 18px 15px;
+    gap: 15px;
+    color: white;
+  }
+  .box .answers-box .answer:hover {
+    border-radius: 19px;
+    background: rgb(100, 100, 100);
+  }
+  
+  .nextQuestion {
+    width: 145px;
+    padding: 15px;
+    margin-top: 55px;
+    border: none;
+    color: white;
+    border-radius: 19px;
+    background: gray;
+  }
+  .nextQuestion:hover {
+    border-radius: 19px;
+    box-shadow: 6px 6px 12px #98b9bc, -6px -6px 12px #e4ffff;
+  }
+  
+  
+  
+  .resetBtn {
+    width: 145px;
+    padding: 15px;
+    margin-top: 55px;
+    border: none;
+    color: white;
+    border-radius: 19px;
+    background: gray;
+
+  }
+  .resetBtn:hover {
+    border-radius: 19px;
+    box-shadow: 6px 6px 12px #98b9bc, -6px -6px 12px #e4ffff;
+  }
+  
