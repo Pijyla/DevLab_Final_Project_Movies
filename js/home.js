@@ -6,12 +6,88 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const API_MOST_POPULAR_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const API_BEST_MOVIES_URL = BASE_URL + '/discover/movie?sort_by=vote_average.desc&vote_count.gte=10&' + API_KEY;
+const REVENUE_URL = BASE_URL + '/discover/movie?sort_by=revenue.desc&' + API_KEY;
 const POPULAR_URL = BASE_URL + '/trending/movie/week?' + API_KEY
 const NEWEST_URL = BASE_URL + '/movie/now_playing?' + API_KEY
 const UPCOMING_URL = BASE_URL + "/movie/upcoming?" + API_KEY
 
 const topRated = document.getElementById('top-rated')
 const best = document.getElementById('best')
+const slider = document.querySelector('#carousel');
+
+///////////// Slider //////////////
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let slideIndex = 1;
+
+function plusSlides(e) {
+  let num;
+
+  if (e.target === prevBtn) num = -1;
+  if (e.target === nextBtn) num = 1;
+
+  showSlides((slideIndex += num));
+}
+
+
+function showSlides(n) {
+  const slides = Array.from(document.querySelectorAll(".slide"));
+
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+
+  slides.forEach((slide) => slide.classList.remove("is-active"));
+  slides[slideIndex - 1].classList.add("is-active");
+
+}
+
+prevBtn.addEventListener("click", plusSlides);
+nextBtn.addEventListener("click", plusSlides);
+
+getRevenueMovies(REVENUE_URL);
+
+function getRevenueMovies(url) {
+  lastUrl = url;
+    fetch(url).then(res => res.json()).then(data => {
+        if(data.results.length !== 0){
+            RevenueMovies(data.results);
+            currentPage = data.page;
+            nextPage = currentPage + 1;
+            prevPage = currentPage - 1;
+            totalPages = data.total_pages;
+
+            current.innerText = currentPage;
+
+         
+        }else{
+            slider.innerHTML= `<h1 class="no-results">No Results Found</h1>`
+        }
+    })
+}
+
+function RevenueMovies(data){
+console.log("aaaaa", data)
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview, id} = movie;
+        const movieEl = document.createElement('div');
+        movieEl.classList = 'slide fade';
+        movieEl.innerHTML = `
+        <figure class="slide-image">
+                <img
+                src="${IMG_URL+poster_path}" alt="${title}
+                />
+                <figcaption>${title}</figcaption>
+              </figure>
+        `
+        slider.appendChild(movieEl);
+
+    })
+}
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////// P A G I N A T I O N //
 
