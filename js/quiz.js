@@ -8,7 +8,6 @@ let finalSC = document.createElement('h1');
 var genre;
 var important;
 var duration;
-// let age;
 var mark;
 const API_KEY = 'api_key=08beb287a4aac1ea2289c2ee16e39d87';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -16,7 +15,7 @@ let API_URL = BASE_URL + '/discover/movie?' + API_KEY + "&" + genre + important 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 main = document.querySelector('.about-section');
 
-//questions
+//Pitanja i ponudjeni odgovori
 let questions = [{
   question: '1:Whats your favorite genre?',
   answers: [{
@@ -67,41 +66,11 @@ let questions = [{
 
   ]
 
-},
-//   {
-//   question: '4:Do you prefer older or newer movies?',
-
-//   answers: [{
-//       value: `Older`,
-//     },
-//     {
-//       value: `Newer`,
-//     }
-
-
-//   ]
-
-// },
-// {
-//   question: '5:Do you prefer movies with higher or lower average mark?',
-
-//   answers: [{
-//       value: 'Higher',
-//     },
-    
-//     {
-//       value: 'Lower',
-
-//     }
-
-
-//   ]
-
-// }
+}
 ];
 
 
-//function get Answers
+
 function getAnswers(currentQUestion) {
   
   //kada dodje do kraja pitanja 
@@ -177,6 +146,8 @@ function removeLastQuestion() {
   }
 }
 
+
+// Provjera odgovora i appendanje varijabli u zavisnosti od odgovora
 function checkAnswer(e) {
 
   let ans = document.querySelectorAll('.answer');
@@ -211,18 +182,6 @@ genre = "with_genres=18,10794&"
   } else if (e.target.innerText == "Shorter") {
     duration = "with_runtime.lte=80&"
   }
-
-  // if (e.target.innerText == "Older") {
-  //   age = "ubaci datum"
-  // } else if (e.target.innerText == "Never") {
-  //   age = "ubaci datum"
-  // }
-
-  // if (e.target.innerText == "Higher") {
-  //   mark = "vote_average.gte=5"
-  // } else if (e.target.innerText == "lower") {
-  //   mark = "vote_average.lte=5"
-  // }
 }
 
 
@@ -244,12 +203,8 @@ currentQUestion=0;
   quizBox.append(nextQuestion);
 });
 
+
+// Izmjena API-ja
 function go() {
-console.log(genre);
-console.log(duration);
-console.log(important);
 API_URL = BASE_URL + '/discover/movie?' + API_KEY + genre + important + duration;
-console.log(API_URL);
-
-
 }
