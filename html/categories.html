@@ -9,17 +9,15 @@
     <title>Categories</title>
 </head>
 <body>
-<!-------------------------------------------------------------------------------------------------- H E A D E R  /  N A V I G A T I O N  -->
 <header id="header">
-    <!-- N A V I G A T I O N -->
     <nav class="navbar" >
         <a href="/index.html" class="logo"><img src="/images/logo.jpg" alt="Logo"></a>
         <input type="checkbox" id="toggler">
         <label for="toggler"><img class="menu-image" src="/images/menu_icon.png"></label>
         <div class="menu">
             <ul class="list">
-                <li> <a class="active" href="/index.html">HOME</a> </li>
-                <li> <a href="/html/categories.html">CATEGORIES</a> </li>
+                <li> <a href="/index.html">HOME</a> </li>
+                <li> <a class="active" href="/html/categories.html">CATEGORIES</a> </li>
                 <li> <a href="/html/recommendations.html">RECOMMENDATIONS</a> </li>
                 <li> <a href="/html/quiz.html">QUIZ</a> </li>
                 <li> <a href="/html/about_us.html">ABOUT US</a> </li>
@@ -27,9 +25,7 @@
         </div>
     </nav>
 </header>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
-<!--------------------------------------------------------------------------------------------------------------------------- S E A R C H -->
     <form id="search" class="searchForm">
         <div class="search-box">
             <input class="search-text" id="search_param" type="text" placeholder="Search here...">
@@ -38,17 +34,13 @@
             </a>
         </div>
     </form>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
-<!------------------------------------------------------------------------------------------------------------------------- F I L T E R S -->
-    <section id="filters">
+=    <section id="filters">
         <div class="filter" id="newest_movies">Newest</div>
         <div class="filter" id="upcoming_movies">Upcoming</div>
         <div class="filter" id="popular_movies">Popular</div>
     </section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
-<!------------------------------------------------------------------------------------------------------------- V O L U M E   S L I D E R -->
     <section id = "lables_slider">
         <p id= "p_slider">
             <label for="lower" id="lowerLabel">Value:</label>
@@ -60,35 +52,27 @@
             <input type="range" min="0" max="10" value="10" id="upper">
         </span>
     </section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
-<!----------------------------------------------------------------------------------------------------------------------------- T I T L E -->
     <section id="title"><h1>You searched for this:</h1></section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 
     <section id="tags">
     </section>
 
     <section id="myNav" class="overlay">
 
-        <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <!-- Overlay content -->
         <div class="overlay-content" id="overlay-content"></div>
         <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
         <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
 
     </section>
 
-<!------------------------------------------------------------------------------------------------------------------------------- M A I N -->
     <section id="main">
     </section>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->  
     <section id="pagination">
         <div class="page" id="prev">Previous Page</div>
         <div class="current" id="current">1</div>
         <div class="page" id="next">Next Page</div>
     </section>
-<!---------------------------------------------------------------------------------------------------------------------------- F O O T E R-->
 <footer id="footer" class="footer">
     <div class="footer-right">
         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -108,7 +92,6 @@
         <p>DevelopersLab &copy; 2022</p>
     </div>
 </footer>
-<!---------------------------------------------------------------------------------------------------------------------------------- E N D-->
 <script src="/js/categories.js"></script>
 </body>
 </html>

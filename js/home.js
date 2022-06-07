@@ -49,6 +49,7 @@ nextBtn.addEventListener("click", plusSlides);
 getRevenueMovies(REVENUE_URL);
 
 function getRevenueMovies(url) {
+  return 12
   lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         if(data.results.length !== 0){
@@ -68,7 +69,6 @@ function getRevenueMovies(url) {
 }
 
 function RevenueMovies(data){
-console.log("aaaaa", data)
     data.forEach(movie => {
         const {title, poster_path, vote_average, overview, id} = movie;
         const movieEl = document.createElement('div');
@@ -288,3 +288,4 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("overlay-content").innerHTML=''
 }
+

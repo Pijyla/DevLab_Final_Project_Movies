@@ -107,7 +107,7 @@ function showMovies(data){
             <h3>About movie</h3>
             ${overview}
             <br/> 
-            <button class="watch-trailer" id="${id}">Watch trailer</button>
+            <button id="${id}" style={"display:none"}></button>
         </div>
         `
         main.appendChild(movieEl);
