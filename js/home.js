@@ -49,7 +49,6 @@ nextBtn.addEventListener("click", plusSlides);
 getRevenueMovies(REVENUE_URL);
 
 function getRevenueMovies(url) {
-  return 12
   lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         if(data.results.length !== 0){
@@ -70,20 +69,30 @@ function getRevenueMovies(url) {
 
 function RevenueMovies(data){
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview, id} = movie;
+        const {title, poster_path} = movie;
         const movieEl = document.createElement('div');
-        movieEl.classList = 'slide fade';
-        movieEl.innerHTML = `
-        <figure class="slide-image">
-                <img
-                src="${IMG_URL+poster_path}" alt="${title}
-                />
-                <figcaption>${title}</figcaption>
-              </figure>
-        `
+        movieEl.classList.add("slide");
+        movieEl.classList.add("fade");
+
+        let figure = document.createElement('figure');
+        figure.classList.add("slide-image");
+
+        let img = document.createElement('img');
+        img.src = IMG_URL+poster_path;
+
+        let figcaption = document.createElement('figcaption');
+        figcaption.innerHTML = title;
+
+    
+        figure.appendChild(img);
+        figure.appendChild(figcaption)
+        movieEl.appendChild(figure);
         slider.appendChild(movieEl);
+     
 
     })
+
+    document.getElementById("carousel").firstChild.classList.add('is-active');
 }
 
 
@@ -214,7 +223,7 @@ function bestMovies(data){
     let movies = data.slice(0, 5);
     best.innerHTML = '';
     movies.forEach(movie => {
-        const {title, poster_path, vote_average, overview, id} = movie;
+        const {title, poster_path, vote_average, overview} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('best-movie');
         movieEl.innerHTML = `
@@ -226,15 +235,9 @@ function bestMovies(data){
         <div class="about-best-movie">
             <h3>About movie</h3>
             ${overview}
-            <br/> 
-            <button class="watch-trailer" id="${id}">Watch trailer</button>
         </div>
         `
         best.appendChild(movieEl);
-
-        document.getElementById(id).addEventListener('click', () => {
-          openNav(movie)
-        })
     })
 }
 
@@ -246,6 +249,7 @@ function openNav(movie) {
   let id = movie.id;
   let embed = [];
   fetch(BASE_URL + '/movie/'+id+'/videos?'+API_KEY).then(res => res.json()).then(videoData => {
+    console.log(videoData);
     if(videoData){
       document.getElementById("myNav").style.width = "100%";
       if(videoData.results.length > 0){
@@ -288,4 +292,3 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("overlay-content").innerHTML=''
 }
-
